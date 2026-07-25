@@ -3,59 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Web Sederhana</title>
+    <title>Halaman Web Sederhana - Lengkap</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f7f6;
             color: #333;
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            padding: 20px;
         }
         .container {
             background-color: #ffffff;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
             text-align: center;
-            max-width: 400px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 { color: #007bff; margin: 0; }
+        h2 { color: #333; border-left: 4px solid #007bff; padding-left: 10px; margin-top: 30px; }
+        
+        /* Grid Fitur */
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .card h3 { margin-top: 0; color: #007bff; }
+
+        /* Tabel */
+        table {
             width: 100%;
-        }
-        h1 {
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #666;
-        }
-        .btn {
-            display: inline-block;
+            border-collapse: collapse;
             margin-top: 15px;
-            padding: 10px 20px;
+        }
+        table, th, td { border: 1px solid #ddd; }
+        th, td { padding: 12px; text-align: left; }
+        th { background-color: #007bff; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* Formulir */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        label { font-weight: bold; }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
             background-color: #007bff;
             color: white;
-            text-decoration: none;
+            border: none;
+            padding: 12px;
             border-radius: 5px;
             font-weight: bold;
+            cursor: pointer;
             transition: background 0.3s;
         }
-        .btn:hover {
-            background-color: #0056b3;
+        button:hover { background-color: #0056b3; }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Halo, Dunia!</h1>
-        <p>Ini adalah tampilan halaman HTML sederhana yang dibuat untuk proyek Git Anda. Tampilan ini sudah responsif dan rapi.</p>
-        <a href="#" class="btn">Pelajari Lebih Lanjut</a>
+        <!-- Bagian Kepala / Header -->
+        <header>
+            <h1>Selamat Datang di Proyek Web Saya</h1>
+            <p>Sebuah demonstrasi halaman HTML terstruktur untuk latihan Git dan GitHub.</p>
+        </header>
+
+        <!-- Bagian Konten 1: Fitur/Keunggulan -->
+        <section>
+            <h2>Layanan & Fitur</h2>
+            <div class="grid-features">
+                <div class="card">
+                    <h3>Desain Responsif</h3>
+                    <p>Tampilan web otomatis menyesuaikan layar HP, tablet, maupun komputer Anda.</p>
+                </div>
+                <div class="card">
+                    <h3>Kode Bersih</h3>
+                    <p>Ditulis dengan struktur HTML5 yang rapi sehingga mudah dipahami pemula.</p>
+                </div>
+                <div class="card">
+                    <h3>Performa Cepat</h3>
+                    <p>Tanpa file eksternal yang berat, membuat pemuatan halaman menjadi instan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Konten 2: Tabel Data -->
+        <section>
+            <h2>Daftar Riwayat Perubahan (Log)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Fitur Halaman</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Struktur Dasar HTML</td>
+                        <td>Selesai</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Gaya CSS Internal</td>
+                        <td>Selesai</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Interaktivitas JavaScript</td>
+                        <td>Belum Ada</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Bagian Konten 3: Formulir Kontak -->
+        <section>
+            <h2>Hubungi Saya</h2>
+            <form action="#" method="POST">
+                <div>
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda..." required>
+                </div>
+                <div>
+                    <label for="pesan">Pesan Usulan:</label>
+                    <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan usulan atau masukan Anda di sini..." required></textarea>
+                </div>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+
+        <!-- Bagian Kaki / Footer -->
+        <footer>
+            <p>&copy; 2026 Proyek Git Satria. Dibuat untuk tujuan belajar.</p>
+        </footer>
     </div>
 
 </body>
